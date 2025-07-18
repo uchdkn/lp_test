@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>社内DXプロジェクトポータル</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --primary-color: #f0f8ff;
+            --secondary-color: #e6f2ff;
+            --accent-color: #00a8e8;
+            --text-color: #333333;
+            --header-height: 70px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            padding: 0 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            height: var(--header-height);
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-color);
+        }
+
+        main {
+            padding-top: var(--header-height);
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 60vh;
+            padding: 4rem 0;
+            background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 1)), url('https://source.unsplash.com/random/1600x900/?business,office') no-repeat center center/cover;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            color: #555;
+        }
+
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            font-weight: 600;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        .mission-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        .initiatives-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0, 168, 232, 0.2);
+        }
+
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .cta-section {
+            background-color: var(--primary-color);
+            text-align: center;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background-color: var(--accent-color);
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 15px 35px;
+            border-radius: 50px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #0077b6;
+            transform: scale(1.05);
+        }
+        
+        .cta-button svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">DX-DRIVE</div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>未来の働き方を、今日、創造する。</h1>
+                <p>社内DXプロジェクトポータルへようこそ。イノベーションを加速し、業務効率を最大化します。</p>
+            </div>
+        </section>
+
+        <section id="mission" class="section">
+            <div class="container">
+                <h2 class="section-title">Our Mission</h2>
+                <div class="mission-content">
+                    <p>
+                        私たちは、最新のデジタル技術を活用して、社内のあらゆる業務プロセスを変革し、
+                        従業員一人ひとりがより創造的で価値の高い仕事に集中できる環境を構築することを目指します。
+                        データの力を解放し、迅速な意思決定を支援します。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="initiatives" class="section" style="background-color: #161625;">
+            <div class="container">
+                <h2 class="section-title">Core Initiatives</h2>
+                <div class="initiatives-grid">
+                    <div class="card">
+                        <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.82m5.84-2.56a6 6 0 016.38 8.11l-5.84-7.38zM12 12a6 6 0 01-6-6h4.82m2.36 0a6 6 0 01-8.11 6.38L12 12z" />
+                        </svg>
+                        <h3>業務プロセス自動化</h3>
+                        <p>RPAやAIを活用し、定型業務や反復作業を自動化。ヒューマンエラーを削減し、生産性を飛躍的に向上させます。</p>
+                    </div>
+                    <div class="card">
+                        <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h12A2.25 2.25 0 0020.25 14.25V3.75M3.75 3h-1.5a1.125 1.125 0 00-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h1.5v-1.5" />
+                           <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75v6m-3-3h6" />
+                        </svg>
+                        <h3>データ活用文化の醸成</h3>
+                        <p>散在するデータを一元化し、BIツールを導入。誰もがデータに基づいた意思決定を行える文化を根付かせます。</p>
+                    </div>
+                    <div class="card">
+                        <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 100 15 7.5 7.5 0 000-15zM21 21l-5.197-5.197" />
+                        </svg>
+                        <h3>デジタルスキル向上</h3>
+                        <p>最新ツールに関する研修やワークショップを定期的に開催。全従業員のITリテラシーとデジタル対応能力を引き上げます。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="creator" class="section">
+            <div class="container">
+                <h2 class="section-title">Site Creator</h2>
+                <div style="text-align: center;">
+                    <img src="YUT00133.JPG" alt="サイト制作者" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 1.5rem;">
+                    <h3>Y.T</h3>
+                    <p style="max-width: 600px; margin: 0 auto;">このサイトは、社内DX推進の一環として作成されました。<br>ご意見・ご要望は、お気軽にChatスペースまでお寄せください。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="creator" class="section">
+            <div class="container">
+                <h2 class="section-title">Site Creator</h2>
+                <div style="text-align: center;">
+                    <img src="YUT00133.JPG" alt="サイト制作者" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 1.5rem;">
+                    <h3>Y.T</h3>
+                    <p style="max-width: 600px; margin: 0 auto;">このサイトは、社内DX推進の一環として作成されました。<br>ご意見・ご要望は、お気軽にChatスペースまでお寄せください。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="join" class="section cta-section">
+            <div class="container">
+                <h2 class="section-title">Join the Conversation</h2>
+                <p style="margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    プロジェクトに関する議論や情報交換はチャットスペースで行っています。お気軽にご参加ください。
+                </p>
+                <!-- ↓↓↓ Chatスペースのリンクをhrefに設定してください ↓↓↓ -->
+                <a href="#" class="cta-button" id="chat-join-button">
+                    <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" />
+                    </svg>
+                    Chatスペースに参加する
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <!-- ↓↓↓ [Your Company Name]の部分を実際の会社名に変更してください ↓↓↓ -->
+            <p>&copy; 2025 [Your Company Name] DX-DRIVE Project. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
